@@ -15,7 +15,7 @@ code {
 
 .layout-grid {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1fr 7fr;
   height: 100vh;
 }
 
@@ -24,4 +24,23 @@ code {
 }
 .action-area {
   background: #fff;
+}
+
+.sidebar-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 0.75rem 1rem;
+  align-items: baseline;
+  color: #999 !important;
+  font-size: 1rem;
+}
+
+.sidebar-grid a {
+  color: #999;
+  text-decoration: none;
+}
+
+.active-route {
+  color: #3e88ff !important;
+  font-weight: 700;
 }
