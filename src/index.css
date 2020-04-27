@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  height: 100vh;
+}
+
+.sidebar {
+  background: #fff;
+}
+.action-area {
+  background: #fff;
+}
