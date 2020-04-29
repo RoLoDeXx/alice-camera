@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <div className="layout-grid">
         <Sidebar />
-        <div className="action-area container-fluid border-left">
+        <div className="action-area  border-left">
           <ActionBar />
           <Route path="/camps" component={Campaigns} />
           <Route path="/people" component={People} />
