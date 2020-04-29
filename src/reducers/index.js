@@ -1,3 +1,5 @@
 import { combineReducers } from "redux";
-
-export default combineReducers({});
+import stepsReducer from "./stepsReducer";
+export default combineReducers({
+  step: stepsReducer,
+});

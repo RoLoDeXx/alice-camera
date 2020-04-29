@@ -1,8 +1,15 @@
-import React, { Component } from "react";
 import Stepper from "./Stepper";
 import ActionBar from "../ActionBar";
-export default class index extends Component {
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getStep } from "../../actions";
+export class index extends Component {
+  componentDidMount() {
+    this.props.getStep();
+  }
   render() {
+    console.log(this.props.step);
+
     return (
       <div>
         <ActionBar title="All Campaigns" />
@@ -11,3 +18,9 @@ export default class index extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  step: state.step,
+});
+
+export default connect(mapStateToProps, { getStep })(index);

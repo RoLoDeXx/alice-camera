@@ -1,20 +1,18 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getStep, setStep } from "../../actions";
 
-export default class Stepper extends Component {
-  constructor() {
-    super();
-    this.state = {
-      gb: 1,
-    };
+class Stepper extends Component {
+  componentDidMount() {
+    this.props.getStep();
   }
 
   jumpToStep = (number) => {
-    this.setState({
-      gb: number,
-    });
+    this.props.setStep(number);
   };
 
   render() {
+    console.log(this.props.step);
     return (
       <div>
         <div className="stepper">
@@ -24,7 +22,7 @@ export default class Stepper extends Component {
               this.jumpToStep(1);
             }}
           >
-            {this.state.gb > 1 ? (
+            {this.props.step > 1 ? (
               <span className="active-tick">
                 <i className="fas fa-check"></i>
               </span>
@@ -34,14 +32,14 @@ export default class Stepper extends Component {
             <span>Sequence</span>
           </span>
 
-          {this.state.gb >= 2 ? (
+          {this.props.step >= 2 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
               onClick={() => {
                 this.jumpToStep(2);
               }}
             >
-              {this.state.gb > 2 ? (
+              {this.props.step > 2 ? (
                 <span className="active-tick">
                   <i className="fas fa-check"></i>
                 </span>
@@ -61,14 +59,14 @@ export default class Stepper extends Component {
             </span>
           )}
 
-          {this.state.gb >= 3 ? (
+          {this.props.step >= 3 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
               onClick={() => {
                 this.jumpToStep(3);
               }}
             >
-              {this.state.gb > 3 ? (
+              {this.props.step > 3 ? (
                 <span className="active-tick">
                   <i className="fas fa-check"></i>
                 </span>
@@ -87,14 +85,14 @@ export default class Stepper extends Component {
               <span className="unactive-circle">3</span> <span>People</span>
             </span>
           )}
-          {this.state.gb >= 4 ? (
+          {this.props.step >= 4 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
               onClick={() => {
                 this.jumpToStep(4);
               }}
             >
-              {this.state.gb > 4 ? (
+              {this.props.step > 4 ? (
                 <span className="active-tick">
                   <i className="fas fa-check"></i>
                 </span>
@@ -113,14 +111,14 @@ export default class Stepper extends Component {
               <span className="unactive-circle">4</span> <span>Settings</span>
             </span>
           )}
-          {this.state.gb >= 5 ? (
+          {this.props.step >= 5 ? (
             <span
               className="stepper-item stepper-ender complete d-flex align-items-center justify-content-around"
               onClick={() => {
                 this.jumpToStep(5);
               }}
             >
-              {this.state.gb > 5 ? (
+              {this.props.step > 5 ? (
                 <span className="unactive-circle">5</span>
               ) : (
                 <span className="active-circle">5</span>
@@ -142,3 +140,9 @@ export default class Stepper extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { step: state.step };
+};
+
+export default connect(mapStateToProps, { getStep, setStep })(Stepper);

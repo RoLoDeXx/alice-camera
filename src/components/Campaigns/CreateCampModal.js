@@ -1,26 +1,28 @@
 import React, { Component } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "react-flags-select/css/react-flags-select.css";
+import { connect } from "react-redux";
+import { getStep, setStep } from "../../actions";
 
-export default class CreateCampModal extends Component {
+export class CreateCampModal extends Component {
   constructor() {
     super();
-    this.state = { gb: 1, fileName: "" };
+    this.state = {
+      fileName: "",
+    };
   }
-
   onUpload = (e) => {
     this.setState({ fileName: e.target.files[0].name });
   };
 
   nextStep = async () => {
     await this.setState((prev) => ({ gb: prev.gb + 1 }));
-    console.log(this.state.gb);
+    console.log(this.props.step);
   };
 
   removeFile = () => {
     this.setState({ fileName: "" });
   };
-
   render() {
     return (
       <div
@@ -46,7 +48,7 @@ export default class CreateCampModal extends Component {
                 &times;
               </span>
             </button>
-            {this.state.gb === 1 && (
+            {this.props.step === 1 && (
               <div className="modal-body campaign-modal pb-5 mb-5">
                 <h3 className="text-center mb-4">Create a Campaign</h3>
 
@@ -85,7 +87,7 @@ export default class CreateCampModal extends Component {
                 </div>
               </div>
             )}
-            {this.state.gb === 2 && (
+            {this.props.step === 2 && (
               <div className="modal-body campaign-modal px-4 pb-4">
                 <h3 className="text-center mb-4 border-bottom pb-4">
                   Choose a Template
@@ -168,7 +170,7 @@ export default class CreateCampModal extends Component {
               </div>
             )}
 
-            {this.state.gb === 3 && (
+            {this.props.step === 3 && (
               <div className="modal-body campaign-modal">
                 <h3 className="text-center mb-4 pb-4">Import People</h3>
 
@@ -235,7 +237,7 @@ export default class CreateCampModal extends Component {
               </div>
             )}
 
-            {this.state.gb === 4 && (
+            {this.props.step === 4 && (
               <div className="modal-body campaign-modal">
                 <h3 className="text-center pb-2">Add Prospects</h3>
 
@@ -312,3 +314,9 @@ export default class CreateCampModal extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  step: state.step,
+});
+
+export default connect(mapStateToProps, { getStep })(CreateCampModal);
