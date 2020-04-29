@@ -11,8 +11,8 @@ export default function App() {
         <Sidebar />
         <div className="action-area container-fluid border-left">
           <ActionBar />
-          {/* <Route path="/" component={Campaigns} />
-          <Route path="/people" component={People} /> */}
+          <Route path="/camps" component={Campaigns} />
+          <Route path="/people" component={People} />
         </div>
       </div>
     </BrowserRouter>

@@ -36,7 +36,7 @@ export default function Sidebar() {
       <img src={logo} className="w-100 " alt="site-logo" />
       <div className="container mt-4">
         {stash.map((item) => (
-          <div className="sidebar-grid">
+          <div className="sidebar-grid" key={item.title}>
             <i className={`fas fa-${item.icon}`}></i>
             <Link to={item.link}> {item.title}</Link>
           </div>

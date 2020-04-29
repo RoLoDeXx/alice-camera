@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
+    "react-custom-flag-select": "^2.5.0",
     "react-dom": "^16.8.6",
+    "react-flags-select": "^1.1.12",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8",

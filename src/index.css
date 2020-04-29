@@ -26,6 +26,10 @@ code {
   background: #fff;
 }
 
+.navbar {
+  padding: 1.75rem;
+}
+
 .sidebar-grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -43,4 +47,79 @@ code {
 .active-route {
   color: #3e88ff !important;
   font-weight: 700;
+}
+
+.active-color {
+  color: #3e88ff !important;
+}
+
+.campaign-modal .card {
+  border: none !important;
+}
+
+.tiny-text {
+  font-size: 14px;
+}
+
+.shadow-temp button {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15) !important;
+  border-radius: 5px !important;
+}
+
+.import-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background: #bbb;
+  color: #333;
+  padding: 1.25rem 4rem;
+  text-align: center;
+}
+
+.campaign-modal {
+  padding: 0;
+}
+
+.input-btn-label {
+  border: 1.55px solid #ff006e;
+  color: #ff006e;
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 5rem auto;
+}
+.import-cont-btn {
+  background: #ff006e;
+  border: none;
+  color: #fff;
+  padding: 0.35rem 1rem;
+  border-radius: 5px;
+}
+
+.flag-dd button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-mobile-input {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.flag-select__option--placeholder {
+  height: auto !important;
 }
