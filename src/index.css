@@ -155,6 +155,7 @@ code {
   text-align: center;
   border: 1px solid #dee2e6 !important;
   font-weight: 500;
+  cursor: pointer;
 }
 .stepper-item.complete {
   background: #ff006e;
@@ -178,7 +179,7 @@ code {
 }
 
 .active-circle {
-  padding: 0rem 0.5rem;
+  padding: 0.075rem 0.5rem;
   background: #ffffff94;
   color: white;
   border-radius: 50%;
