@@ -34,13 +34,19 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <img src={logo} className="w-100 " alt="site-logo" />
-      <div className="container mt-4">
-        {stash.map((item) => (
-          <div className="sidebar-grid" key={item.title}>
-            <i className={`fas fa-${item.icon}`}></i>
-            <Link to={item.link}> {item.title}</Link>
-          </div>
-        ))}
+      <div className="container mt-4 d-flex flex-column justify-content-between">
+        <div>
+          {stash.map((item) => (
+            <div className="sidebar-grid" key={item.title}>
+              <i className={`fas fa-${item.icon}`}></i>
+              <Link to={item.link}> {item.title}</Link>
+            </div>
+          ))}
+        </div>
+        <div className="sidebar-grid border-top">
+          <i className={`fas fa-user-circle`}></i>
+          <Link to="#"> Profile</Link>
+        </div>
       </div>
     </div>
   );

@@ -26,6 +26,10 @@ code {
   background: #fff;
 }
 
+.sidebar .justify-content-between {
+  height: 85%;
+}
+
 .navbar {
   padding: 1.75rem;
   background: #fff;
