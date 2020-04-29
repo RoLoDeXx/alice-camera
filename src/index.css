@@ -123,3 +123,55 @@ code {
 .flag-select__option--placeholder {
   height: auto !important;
 }
+
+/* steppers */
+
+.stepper {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  position: relative;
+}
+.stepper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  content: "";
+  background: #e7e7e7;
+}
+.stepper__item {
+  flex: 100%;
+  padding: 20px 20px 20px 40px;
+  background: white;
+  margin: 0 0 0 -19px;
+  -webkit-clip-path: polygon(
+    20px 50%,
+    0% 0%,
+    calc(100% - 20px) 0%,
+    100% 50%,
+    calc(100% - 20px) 100%,
+    0% 100%
+  );
+}
+.stepper__item.current {
+  background: #fff;
+  font-weight: bold;
+}
+.stepper__item.complete {
+  background: red;
+}
+.stepper__item:first-child {
+  padding: 20px;
+  -webkit-clip-path: polygon(
+    0% 0%,
+    calc(100% - 20px) 0%,
+    100% 50%,
+    calc(100% - 20px) 100%,
+    0% 100%
+  );
+}
+.stepper__item:last-child {
+  -webkit-clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
