@@ -1,5 +1,5 @@
 import React from "react";
-
+import Modal from "./PeopleFilterModal";
 export default function index() {
   return (
     <div className="border-top bg-white">
@@ -7,12 +7,14 @@ export default function index() {
         <div className="form-group px-4 d-flex align-items-center my-3 justify-content-between">
           <span className="d-flex align-items-center">
             <input type="checkbox" className="form-check-input" value="" />
-            <input
-              type="text"
+            <button
               className="form-control w-25 ml-3"
               id="usr"
-              placeholder="Filters"
-            />
+              data-toggle="modal"
+              data-target="#people-modal"
+            >
+              Filters
+            </button>
             <input
               type="text"
               className="form-control w-50 ml-3"
@@ -86,6 +88,7 @@ export default function index() {
           </span>
         </div>
       </div>
+      <Modal></Modal>
     </div>
   );
 }

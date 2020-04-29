@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 body {
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -94,6 +97,14 @@ code {
   border-radius: 5px;
 }
 
+.cancel-btn {
+  background: transparent;
+  border: none;
+  color: #777;
+  padding: 0.35rem 1rem;
+  border-radius: 5px;
+}
+
 .flag-dd button {
   display: flex;
   align-items: center;
@@ -121,10 +132,20 @@ code {
   height: auto !important;
 }
 
-.list-items {
-  background: #ccc;
-  height: 74vh;
+.people-filter label {
+  width: fit-content;
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
+.people-filter input[type="text"] {
+  width: 1rem;
+}
+
+/* .list-items {
+  background: #ccc;
+  height: 74vh; */
 /* steppers */
 
 .stepper {
