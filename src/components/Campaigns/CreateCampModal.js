@@ -5,7 +5,7 @@ import "react-flags-select/css/react-flags-select.css";
 export default class CreateCampModal extends Component {
   constructor() {
     super();
-    this.state = { gb: 4 };
+    this.state = { gb: 1 };
   }
 
   nextStep = async () => {
@@ -240,12 +240,23 @@ export default class CreateCampModal extends Component {
                       </div>
 
                       <div className="col-sm-6 px-2 mb-3">
-                        <label>First Name</label>
-                        <input type="text" className="form-control pr-1" />
+                        <label>Time Zone</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
                       </div>
                       <div className="col-sm-6 px-2 mb-3">
-                        <label>Last Name</label>
+                        <label>Title</label>
                         <input type="text" className="form-control pl-1" />
+                      </div>
+
+                      <div className="col-sm-12 px-2 mb-3">
+                        <label>Account</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
                       </div>
                     </div>
                   </div>
