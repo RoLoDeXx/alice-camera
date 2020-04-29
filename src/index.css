@@ -48,6 +48,10 @@ code {
   text-decoration: none;
 }
 
+.bg-darker {
+  background: #e5e5e5;
+}
+
 .active-route {
   color: #3e88ff !important;
   font-weight: 700;

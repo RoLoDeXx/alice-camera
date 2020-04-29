@@ -5,7 +5,7 @@ export default class ActionBar extends Component {
   render() {
     return (
       <div className="navbar d-flex justify-content-between align-items-center container-fluid">
-        <h3>All Campaigns</h3>
+        <h3>{this.props.title}</h3>
         <button
           className="btn btn-success"
           data-toggle="modal"
