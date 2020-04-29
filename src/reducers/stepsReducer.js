@@ -4,6 +4,10 @@ export default (step = 1, action) => {
       return step;
     case "SET_STEP":
       return action.payload;
+    case "NEXT_STEP":
+      return action.payload + 1;
+    case "PREV_STEP":
+      return action.payload - 1;
     default:
       return 1;
   }

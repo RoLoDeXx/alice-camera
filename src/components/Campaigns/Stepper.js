@@ -12,18 +12,19 @@ class Stepper extends Component {
   };
 
   render() {
-    console.log(this.props.step);
     return (
       <div>
         <div className="stepper">
           <span
             className="stepper-item complete d-flex align-items-center justify-content-around"
+            data-toggle="modal"
+            data-target="#campaign-modal"
             onClick={() => {
               this.jumpToStep(1);
             }}
           >
             {this.props.step > 1 ? (
-              <span className="active-tick">
+              <span className="active-tick btn">
                 <i className="fas fa-check"></i>
               </span>
             ) : (
@@ -35,6 +36,8 @@ class Stepper extends Component {
           {this.props.step >= 2 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(2);
               }}
@@ -51,6 +54,8 @@ class Stepper extends Component {
           ) : (
             <span
               className="stepper-item d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(2);
               }}
@@ -62,6 +67,8 @@ class Stepper extends Component {
           {this.props.step >= 3 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(3);
               }}
@@ -78,6 +85,8 @@ class Stepper extends Component {
           ) : (
             <span
               className="stepper-item d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(3);
               }}
@@ -88,6 +97,8 @@ class Stepper extends Component {
           {this.props.step >= 4 ? (
             <span
               className="stepper-item complete d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(4);
               }}
@@ -104,6 +115,8 @@ class Stepper extends Component {
           ) : (
             <span
               className="stepper-item d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(4);
               }}
@@ -114,6 +127,8 @@ class Stepper extends Component {
           {this.props.step >= 5 ? (
             <span
               className="stepper-item stepper-ender complete d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(5);
               }}
@@ -128,6 +143,8 @@ class Stepper extends Component {
           ) : (
             <span
               className="stepper-item d-flex align-items-center justify-content-around"
+              data-toggle="modal"
+              data-target="#campaign-modal"
               onClick={() => {
                 this.jumpToStep(5);
               }}

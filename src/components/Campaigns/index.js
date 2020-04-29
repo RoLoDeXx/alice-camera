@@ -8,11 +8,9 @@ export class index extends Component {
     this.props.getStep();
   }
   render() {
-    console.log(this.props.step);
-
     return (
       <div>
-        <ActionBar title="All Campaigns" />
+        <ActionBar title="All Campaigns" show={true} />
         <Stepper></Stepper>
       </div>
     );

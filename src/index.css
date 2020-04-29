@@ -151,9 +151,20 @@ code {
   width: 1rem;
 }
 
-/* .list-items {
-  background: #ccc;
-  height: 74vh; */
+.routing-btns button {
+  width: 5rem;
+}
+
+.back-btn {
+  border: 2px solid #3e88ff;
+  color: #3e88ff;
+}
+
+.skip-btn {
+  background: #3e88ff;
+  color: white;
+}
+
 /* steppers */
 
 .stepper {

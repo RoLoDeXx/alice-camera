@@ -5,7 +5,7 @@ import ActionBar from "../ActionBar";
 export default function index() {
   return (
     <div className="h-100 bg-darker">
-      <ActionBar title="People"></ActionBar>
+      <ActionBar title="People" show={false}></ActionBar>
       <div className="border-top bg-white">
         <div className="container-fluid">
           <div className="form-group px-4 d-flex align-items-center my-3 justify-content-between">

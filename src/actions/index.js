@@ -11,3 +11,17 @@ export const setStep = (num) => {
     payload: num,
   };
 };
+
+export const nextStep = (num) => {
+  return {
+    type: "NEXT_STEP",
+    payload: num,
+  };
+};
+
+export const prevStep = (num) => {
+  return {
+    type: "PREV_STEP",
+    payload: num,
+  };
+};

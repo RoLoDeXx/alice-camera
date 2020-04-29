@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import "react-flags-select/css/react-flags-select.css";
 import { connect } from "react-redux";
-import { getStep, setStep } from "../../actions";
+import { getStep, nextStep } from "../../actions";
 
 export class CreateCampModal extends Component {
   constructor() {
@@ -15,9 +15,8 @@ export class CreateCampModal extends Component {
     this.setState({ fileName: e.target.files[0].name });
   };
 
-  nextStep = async () => {
-    await this.setState((prev) => ({ gb: prev.gb + 1 }));
-    console.log(this.props.step);
+  nextStep = (num) => {
+    this.props.nextStep(num);
   };
 
   removeFile = () => {
@@ -56,7 +55,9 @@ export class CreateCampModal extends Component {
                   <div className="card">
                     <div
                       className="card-body text-center"
-                      onClick={this.nextStep}
+                      onClick={() => {
+                        this.nextStep(1);
+                      }}
                     >
                       <i className="far fa-file-alt fa-5x active-color"></i>
                       <h5 className="card-title mt-4 mb-4 active-color">
@@ -72,7 +73,9 @@ export class CreateCampModal extends Component {
                   <div className="card">
                     <div
                       className="card-body text-center"
-                      onClick={this.nextStep}
+                      onClick={() => {
+                        this.nextStep(1);
+                      }}
                     >
                       <i className="far fa-edit fa-5x active-color"></i>
                       <h5 className="card-title mt-4 mb-4 active-color">
@@ -99,7 +102,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -108,7 +113,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -117,7 +124,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -126,7 +135,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -135,7 +146,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -144,7 +157,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -153,7 +168,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -162,7 +179,9 @@ export class CreateCampModal extends Component {
                     className="btn shadow my-1 w-100 text-left"
                     data-toggle="button"
                     aria-pressed="false"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(2);
+                    }}
                   >
                     template #
                   </button>
@@ -229,7 +248,9 @@ export class CreateCampModal extends Component {
                 <div className="d-flex flex-row-reverse">
                   <button
                     className="import-cont-btn my-4 mr-4"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(3);
+                    }}
                   >
                     Continue
                   </button>
@@ -301,11 +322,19 @@ export class CreateCampModal extends Component {
                 <div className="d-flex flex-row-reverse">
                   <button
                     className="import-cont-btn my-4 mr-4"
-                    onClick={this.nextStep}
+                    onClick={() => {
+                      this.nextStep(4);
+                    }}
                   >
                     Continue
                   </button>
                 </div>
+              </div>
+            )}
+
+            {this.props.step === 5 && (
+              <div className="modal-body campaign-modal">
+                <h3 className="text-center pb-2">todo</h3>
               </div>
             )}
           </div>
@@ -319,4 +348,4 @@ const mapStateToProps = (state) => ({
   step: state.step,
 });
 
-export default connect(mapStateToProps, { getStep })(CreateCampModal);
+export default connect(mapStateToProps, { getStep, nextStep })(CreateCampModal);
