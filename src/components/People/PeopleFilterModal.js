@@ -45,7 +45,7 @@ export default function PeopleFilterModal() {
                 <input
                   type="text"
                   className="border-top-0 border-right-0 border-left-0 ml-2"
-                  value={0}
+                  defaultValue={0}
                 />
                 <span>Days ago</span>
               </span>
