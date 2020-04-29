@@ -22,12 +22,10 @@ code {
 .sidebar {
   background: #fff;
 }
-.action-area {
-  background: #fff;
-}
 
 .navbar {
   padding: 1.75rem;
+  background: #fff;
 }
 
 .sidebar-grid {
@@ -38,7 +36,6 @@ code {
   color: #999 !important;
   font-size: 1rem;
 }
-
 .sidebar-grid a {
   color: #999;
   text-decoration: none;
@@ -124,6 +121,10 @@ code {
   height: auto !important;
 }
 
+.list-items {
+  background: #ccc;
+  height: 74vh;
+}
 /* steppers */
 
 .stepper {
