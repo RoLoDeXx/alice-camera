@@ -5,12 +5,20 @@ import "react-flags-select/css/react-flags-select.css";
 export default class CreateCampModal extends Component {
   constructor() {
     super();
-    this.state = { gb: 1 };
+    this.state = { gb: 1, fileName: "" };
   }
+
+  onUpload = (e) => {
+    this.setState({ fileName: e.target.files[0].name });
+  };
 
   nextStep = async () => {
     await this.setState((prev) => ({ gb: prev.gb + 1 }));
     console.log(this.state.gb);
+  };
+
+  removeFile = () => {
+    this.setState({ fileName: "" });
   };
 
   render() {
@@ -176,18 +184,45 @@ export default class CreateCampModal extends Component {
                   <div className="">Review and Import</div>
                 </div>
                 <div className="my-5">
-                  <h4 className="text-center text-muted">Upload a .csv file</h4>
-                  <p className="tiny-text text-muted text-center">
-                    please upload a Prospects CSV file
-                  </p>
-                  <label className="input-btn-label">
-                    <input
-                      type="file"
-                      name="csv-input"
-                      className="file-input-btn d-none"
-                    />
-                    + Select a .csv file
-                  </label>
+                  {this.state.fileName === "" ? (
+                    <div>
+                      <h4 className="text-center text-muted">
+                        Upload a .csv file
+                      </h4>
+
+                      <p className="tiny-text text-muted text-center">
+                        please upload a Prospects CSV file
+                      </p>
+
+                      <label
+                        className="input-btn-label"
+                        onChange={(event) => this.onUpload(event)}
+                      >
+                        <input
+                          type="file"
+                          name="csv-input"
+                          className="file-input-btn d-none"
+                        />
+                        + Select a .csv file
+                      </label>
+                    </div>
+                  ) : (
+                    <div>
+                      <h4 className="text-center text-muted">
+                        {this.state.fileName}
+                      </h4>
+                      <p className="tiny-text text-muted text-center">
+                        {`You have uploaded the ${this.state.fileName} file`}
+                      </p>
+
+                      <label
+                        className="input-btn-label"
+                        onClick={this.removeFile}
+                      >
+                        <i class="far fa-trash-alt"></i> Remove File
+                      </label>
+                    </div>
+                  )}
                 </div>
                 <div className="d-flex flex-row-reverse">
                   <button
@@ -241,7 +276,7 @@ export default class CreateCampModal extends Component {
 
                       <div className="col-sm-6 px-2 mb-3">
                         <label>Time Zone</label>
-                        <select id="inputState" class="form-control">
+                        <select id="inputState" className="form-control">
                           <option selected>Choose...</option>
                           <option>...</option>
                         </select>
@@ -253,7 +288,7 @@ export default class CreateCampModal extends Component {
 
                       <div className="col-sm-12 px-2 mb-3">
                         <label>Account</label>
-                        <select id="inputState" class="form-control">
+                        <select id="inputState" className="form-control">
                           <option selected>Choose...</option>
                           <option>...</option>
                         </select>
