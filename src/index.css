@@ -27,7 +27,7 @@ code {
 }
 
 .sidebar .justify-content-between {
-  height: 85%;
+  height: 87%;
 }
 
 .navbar {
@@ -53,12 +53,12 @@ code {
 }
 
 .active-route {
-  color: #3e88ff !important;
+  color: #3a86ff !important;
   font-weight: 700;
 }
 
 .active-color {
-  color: #3e88ff !important;
+  color: #3a86ff !important;
 }
 
 .campaign-modal .card {
@@ -66,7 +66,8 @@ code {
 }
 
 .tiny-text {
-  font-size: 14px;
+  font-size: 16px;
+  color: #7c7c7c !important;
 }
 
 .shadow-temp button {
@@ -74,12 +75,33 @@ code {
   border-radius: 5px !important;
 }
 
+.modal-content {
+  border-radius: 0 !important;
+}
+
+.choose-file {
+  border-bottom: 2px solid #ff006e;
+  font-weight: 600;
+  color: #000;
+}
+
+.text-muted {
+  color: #7c7c7c !important;
+}
+
+.mail-name {
+  width: 10rem;
+  color: #000;
+}
+
 .import-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  background: #bbb;
-  color: #333;
-  padding: 1.25rem 4rem;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+  background: #c4c4c4;
+  color: #575757;
+  padding-left: 4rem;
+  padding-right: 4rem;
+
   text-align: center;
 }
 
@@ -156,13 +178,31 @@ code {
 }
 
 .back-btn {
-  border: 2px solid #3e88ff;
-  color: #3e88ff;
+  border: 2px solid #3a86ff;
+  color: #3a86ff;
 }
 
 .skip-btn {
-  background: #3e88ff;
+  background: #3a86ff;
   color: white;
+}
+
+/* borders */
+
+.border-top {
+  border-top: 1px solid #c4c4c4 !important;
+}
+
+.border-left {
+  border-left: 1px solid #c4c4c4 !important;
+}
+
+.border-right {
+  border-right: 1px solid #c4c4c4 !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #c4c4c4 !important;
 }
 
 /* steppers */
@@ -194,7 +234,7 @@ code {
     0% 100%
   );
   text-align: center;
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid #c4c4c4 !important;
   font-weight: 500;
   cursor: pointer;
 }

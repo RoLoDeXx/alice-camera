@@ -194,15 +194,15 @@ export class CreateCampModal extends Component {
                 <h3 className="text-center mb-4 pb-4">Import People</h3>
 
                 <div className="import-grid">
-                  <div className="">Choose File</div>
-                  <div className="">
+                  <div className="choose-file p-3">Choose File</div>
+                  <div className="p-3">
+                    <i className=" fas fa-chevron-right"></i>
+                  </div>
+                  <div className="p-3">Map Attributes</div>
+                  <div className="p-3">
                     <i className="fas fa-chevron-right"></i>
                   </div>
-                  <div className="">Map Attributes</div>
-                  <div className="">
-                    <i className="fas fa-chevron-right"></i>
-                  </div>
-                  <div className="">Review and Import</div>
+                  <div className="p-3 ">Review and Import</div>
                 </div>
                 <div className="my-5">
                   {this.state.fileName === "" ? (
