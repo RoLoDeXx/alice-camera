@@ -27,7 +27,6 @@ export class PeopleList extends Component {
   };
 
   render() {
-    console.log(this.props.mails);
     return (
       <div>
         <div className="container-fluid">
@@ -50,24 +49,29 @@ export class PeopleList extends Component {
               />
             </span>
             <span className="d-flex align-items-center">
-              <span className="text-muted tiny-text"> 1-4 of 4</span>
+              <span className="text-muted tiny-text">
+                {`1-${this.props.mails.length} of ${this.props.mails.length}`}
+              </span>
               <i className="ml-3 text-muted far fa-caret-square-left fa-2x"></i>
               <i className="text-muted far fa-caret-square-right fa-2x"></i>
-              <button className="import-cont-btn ml-5"> +Add People</button>
+              <button className="import-cont-btn ml-5">+ Add People</button>
             </span>
           </div>
         </div>
         <div className="filter-group"></div>
         <div className="mail-group border-top">
           <div className="item-types d-flex">
-            <div className="item text-center px-5 border-right">
-              <p>4</p> <p>All</p>
+            <div className="item text-cente border-right active-item">
+              <p>5</p>
+              <p>All</p>
             </div>
-            <div className="item text-center px-5 border-right">
-              <p>4</p> <p>Oppurtunities</p>
+            <div className="item text-center border-right">
+              <p>4</p>
+              <p>Oppurtunities</p>
             </div>
-            <div className="item text-center px-5 border-right">
-              <p>0</p> <p>Blacklist</p>
+            <div className="item text-center border-right">
+              <p>5</p>
+              <p>Blacklist</p>
             </div>
           </div>
         </div>

@@ -31,22 +31,32 @@ export const getPeopleList = () => {
     {
       name: "John Doe",
       email: "john@abc.com",
+      oppurtuniy: true,
+      blacklisted: true,
     },
     {
       name: "Sam Valen",
       email: "svalen@abc.com",
+      oppurtuniy: true,
+      blacklisted: false,
     },
     {
       name: "Emmit Hudson",
       email: "emmit@abc.com",
+      oppurtuniy: false,
+      blacklisted: false,
     },
     {
       name: "Vaibhav Bansal",
       email: "Vaibhavbn@abc.com",
+      oppurtuniy: true,
+      blacklisted: false,
     },
     {
       name: "Emiliy Stake",
       email: "emstake@abc.com",
+      oppurtuniy: true,
+      blacklisted: false,
     },
   ];
   return {

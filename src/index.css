@@ -70,6 +70,18 @@ code {
   color: #7c7c7c !important;
 }
 
+.item {
+  padding: 0.25rem;
+  width: 8rem;
+  text-align: center;
+  color: #000;
+}
+
+.active-item {
+  background: #ff75b0;
+  color: white;
+}
+
 .shadow-temp button {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15) !important;
   border-radius: 5px !important;

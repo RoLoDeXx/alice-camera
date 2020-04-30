@@ -6,7 +6,7 @@ export default class Sidebar extends Component {
   constructor() {
     super();
     this.state = {
-      active: "",
+      route: "",
     };
   }
 
@@ -32,12 +32,12 @@ export default class Sidebar extends Component {
       {
         icon: "file-alt",
         title: "Templates",
-        link: "",
+        link: "/temp",
       },
       {
         icon: "cog",
         title: "Settings",
-        link: "",
+        link: "/settings",
       },
     ];
 
@@ -46,12 +46,38 @@ export default class Sidebar extends Component {
         <img src={logo} className="w-100 " alt="site-logo" />
         <div className="container mt-4 d-flex flex-column justify-content-between">
           <div>
-            {stash.map((item) => (
-              <div className="sidebar-grid" key={item.title}>
-                <i className={`fas fa-${item.icon}`}></i>
-                <Link to={item.link}> {item.title}</Link>
-              </div>
-            ))}
+            {stash.map((item) =>
+              this.state.route === item.link ? (
+                <div
+                  className="sidebar-grid active-route"
+                  key={item.title}
+                  onClick={() => {
+                    this.setState({
+                      route: item.link,
+                    });
+                  }}
+                >
+                  <i className={`fas fa-${item.icon}`}></i>
+                  <Link className="active-route" to={item.link}>
+                    {" "}
+                    {item.title}
+                  </Link>
+                </div>
+              ) : (
+                <div
+                  className="sidebar-grid "
+                  key={item.title}
+                  onClick={() => {
+                    this.setState({
+                      route: item.link,
+                    });
+                  }}
+                >
+                  <i className={`fas fa-${item.icon}`}></i>
+                  <Link to={item.link}> {item.title}</Link>
+                </div>
+              )
+            )}
           </div>
           <div className="sidebar-grid border-top">
             <i className={`fas fa-user-circle`}></i>
